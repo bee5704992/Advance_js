@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function inputNumForSort() {
+            let arr = [];
+            let n;
+
+            for (i = 1; i <= 5; i++) {
+                n = +prompt(`ใส่ค่าตัวเลข 5 ครั้ง คุณกำลังใส่ครั้งที่ ${i}`);
+                arr.push(n);
+            }
+
+            let conFirm = confirm(`${arr} ให้เรียงจากน้อยไปมาก? (ถ้ากด cancel จะเรียงจากมากไปน้อย)`);
+
+            function compare(a, b) {
+                return (a > b) ? 1 : (a < b) ? -1 : 0
+            }
+
+            if (conFirm == true) {
+                arr.sort(compare)
+            } else {
+                arr.sort(compare).reverse()
+            }
+
+            alert(arr);
+        }
+
+        inputNumForSort();
+    </script>
+</body>
+
+</html>

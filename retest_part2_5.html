@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function changeStringtoThaiDate() {
+            let date = prompt('ใส่ค่าวัน-เดือน-ปี เช่น 05-01-1996')
+            let monthNames = [
+                'มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน',
+                 'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม']
+
+            let day = +(date[0] + date[1])
+            let month = monthNames[ +(date[3] + date[4]) - 1 ]
+            let year = +(date[6] + date[7] + date[8] + date[9])
+
+            if(month == undefined) {
+                return alert('Error')
+            }
+
+            if(month == 'กุมภาพันธ์' && day > 29) {
+                return alert('Error')
+            }
+
+            if(month[month.length - 1] == 'น' && day > 30) {
+                return alert('Error')
+            }
+
+            if(month[month.length - 1] == 'ม' && day > 31) {
+                return alert('Error')
+            }
+
+            alert(`วันที่ ${day} เดือน ${month} พ.ศ. ${year + 543}`)
+        }
+
+        changeStringtoThaiDate()
+    </script>
+</body>
+</html>

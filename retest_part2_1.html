@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let msg = prompt('English text input for check the text is all uppercase,lowercase or mix?');
+
+        if (msg == msg.toLowerCase()) {
+            alert('All character are small.');
+        }
+
+        if (msg == msg.toUpperCase()) {
+            alert('All character are capital');
+        }
+
+        if (msg != msg.toLowerCase() && msg != msg.toUpperCase()) {
+            alert('All character are mix.');
+        }
+    </script>
+</body>
+
+</html>

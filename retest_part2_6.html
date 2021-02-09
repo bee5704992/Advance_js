@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let string1 = "test"
+        let string2 = "tste"
+
+        let isTheSameAnagram = (string1, string2) => {
+
+            if (!string1 || !string2 || string1.length !== string2.length) { return false; }
+
+            let msg1 = string1.toLowerCase();
+            let msg2 = string2.toLowerCase();
+
+            if (msg1 == msg2) { return false; }
+
+            let str1 = msg1.split('').sort().join('');
+            let str2 = msg2.split('').sort().join('');
+
+            return str1 === str2;
+        }
+
+
+
+        let result = isTheSameAnagram(string1, string2);
+
+        console.log(result);
+    </script>
+</body>
+
+</html>

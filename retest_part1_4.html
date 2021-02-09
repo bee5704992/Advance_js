@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let n = +prompt('ใส่ค่า n (ตัวเลข) เพื่อหาจำนวนเฉพาะ n ตัวแรก');
+        let divider;
+        let answer = [];
+
+
+        for (i = 2; answer.length < n; i++) {
+            for (ii = 2; ii <= i; ii++) {
+
+                if (i % ii == 0) {
+                    divider = ii;
+
+
+                    if (divider == i && answer.length < n) {
+                        answer.push(divider);
+                    }
+
+                    break;
+                }
+            }
+        }
+
+        let answer2 = 0;
+        let answer3 = answer.join('+')
+
+        for (x = 0; x < n; x++) {
+            answer2 = answer2 + answer[x];
+        }
+
+        alert(`ผลบวกของจำนวนเฉพาะ ${n} ตัวแรก คือ\n ${answer3} = ${answer2}`);
+    </script>
+</body>
+
+</html>

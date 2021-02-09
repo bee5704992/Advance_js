@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let n = +prompt('ใส่ค่า n (ตัวเลข) เพื่อหาผลบวกของ n ตัวแรก จำนวนที่เป็นจำนวนเฉพาะจะติดลบ');
+        let divider;
+        let answer = [];
+
+
+        for (i = 2; answer.length < (n - 1); i++) {
+            for (ii = 2; ii <= i; ii++) {
+
+                if (i % ii == 0) {
+                    divider = ii;
+
+
+                    if (divider == i && answer.length < (n - 1)) {
+                        answer.push(-divider);
+                    } else {
+                        answer.push(i);
+                    }
+
+                    break;
+                }
+            }
+        }
+
+        let answer2 = 0;
+        let answer3 = answer.join('+')
+
+        for (x = 0; x < (n - 1); x++) {
+            answer2 = answer2 + answer[x];
+        }
+
+        answer2 = 1 + answer2
+        alert(`ผลบวกของจำนวน ${n} ตัวแรก คือ\n 1+${answer3} = ${answer2}`);
+    </script>
+</body>
+
+</html>

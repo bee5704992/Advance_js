@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function numberOfSquare(height, width) {
+            let allArea = height * width;
+            let squareArea;
+            let answer;
+            let size;
+
+            for (i = 1; i <= height || i <= width; i++) {
+                if (height % i == 0 && width % i == 0) {
+                    squareArea = i * i;
+                    size = i
+                }
+            }
+
+            answer = allArea / squareArea;
+
+            alert(`จะใส่สี่เหลี่ยมจตุรัสขนาด ${size} * ${size} ได้ ${answer} อัน`);
+        }
+    </script>
+</body>
+
+</html>

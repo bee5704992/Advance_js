@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function dotProduct(vector1, vector2) {
+            let answer = 0;
+            let msg = [];
+            let msg2;
+
+            while (vector1.length < vector2.length) {
+                vector1.push(0);
+            }
+
+            while (vector2.length < vector1.length) {
+                vector2.push(0);
+            }
+
+            if (vector1.length == vector2.length) {
+                for (x = 0; x < vector1.length; x++) {
+                    answer = answer + (vector1[x] * vector2[x]);
+                }
+
+                for (i = 0; i < vector1.length; i++) {
+                    msg.push('(' + vector1[i] + '*' + vector2[i] + ')');
+                }
+
+                msg2 = msg.join('+');
+            }
+
+            alert(`${vector1} dot ${vector2} \n จะได้ ${msg2} = ${answer}`);
+        }
+    </script>
+</body>
+
+</html>

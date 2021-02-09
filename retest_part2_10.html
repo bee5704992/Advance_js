@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function squareRoot() {
+            let number = +prompt('Input a number for squareRoot.');
+            let answer;
+            let root;
+
+            for (i = number; i >= 2; i--) {
+                if (number % (i * i) == 0) {
+                    if ((i * i) == number) {
+                        answer = i;
+                        alert(answer);
+                        break;
+                    }
+
+                    for (ii = 1; ii <= number; ii++) {
+                        if ((i * i) * ii == number) {
+                            root = ii;
+                            break;
+                        }
+                    }
+
+                    answer = i;
+                    alert(`${answer} root ${ii}`);
+                    break;
+                }
+            }
+            if (answer != i) {
+                alert(`root ${number}`);
+            }
+        }
+
+        squareRoot();
+    </script>
+</body>
+
+</html>

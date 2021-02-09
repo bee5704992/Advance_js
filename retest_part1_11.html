@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function inputNumForSort() {
+            let arr = [];
+            let n;
+            let arr2 = [];
+
+            for (i = 1; i <= 5; i++) {
+                n = +prompt(`ใส่ค่าตัวเลข 5 ครั้ง คุณกำลังใส่ครั้งที่ ${i}`);
+                arr.push(n);
+            }
+
+            let conFirm = confirm(`${arr} ให้เรียงจากน้อยไปมาก? (ถ้ากด cancel จะเรียงจากมากไปน้อย)`);
+
+
+
+            if (conFirm == true) {
+                while (arr.length != 0) {
+
+                    for (x = 0; x <= arr.length; x++) {
+
+                        if (arr[x] == Math.min(...arr)) {
+                            arr2.push(Math.min(...arr));
+                            arr.splice(x, 1);
+                        }
+                    }
+
+                }
+            } else {
+                while (arr.length != 0) {
+
+                    for (x = 0; x <= arr.length; x++) {
+
+                        if (arr[x] == Math.max(...arr)) {
+                            arr2.push(Math.max(...arr));
+                            arr.splice(x, 1);
+                        }
+                    }
+
+                }
+            }
+
+            alert(arr2);
+        }
+
+        inputNumForSort();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let n = 4129980;
+        let num;
+        let answer = 0;
+
+        for (i = 1; i <= n; i++) {
+            num = String(i);
+
+            for (let x of num) {
+                answer = answer + +x;
+            }
+
+        }
+
+        alert(`ผลบวกของเลขโดดทั้งหมดตั้งแต่ 1 - 4129980 = ${answer}`);
+    </script>
+</body>
+
+</html>

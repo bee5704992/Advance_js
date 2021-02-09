@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = [];
+        let n;
+
+
+        for (i = 1; i <= 3; i++) {
+            n = +prompt(`ใส่ค่าตัวเลข 3 ครั้ง เพื่อหา ค.ร.น. คุณกำลังใส่ครั้งที่ ${i}`);
+            arr.push(n);
+        }
+
+        let gcd = (a, b) => {
+            if (!b) return b === 0 ? a : NaN;
+            return gcd(b, a % b);
+        }
+
+
+
+        let lcm2 = (a, b) => {
+            return a * b / gcd(a, b);
+        }
+
+
+        let lcm = (arr) => {
+            let n = 1;
+            for (let i = 0; i < arr.length; i++)
+                n = lcm2(arr[i], n);
+            return n;
+        }
+
+        alert(`${arr} ค.ร.น.คือ ${lcm(arr)}`)
+
+        // 10 20 30 40 50 60 70 80 90 100 110 120
+        // 24 48 72 96 120
+        // 30 60 90 120
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function maxPairSum(...array) {
+            let array2 = [...array];
+            let answer = 0;
+            let sum = [];
+
+            for (i = 1; i <= 2; i++) {
+                for (x = 0; x <= array.length; x++) {
+
+                    if (array[x] == Math.max(...array)) {
+                        answer = answer + Math.max(...array);
+                        sum.push(Math.max(...array));
+                        array.splice(x, 1);
+                        break;
+                    }
+                }
+
+            }
+            alert(`${array2} \n ${answer} มาจาก ${sum[0]} + ${sum[1]}`);
+        }
+    </script>
+</body>
+
+</html>
